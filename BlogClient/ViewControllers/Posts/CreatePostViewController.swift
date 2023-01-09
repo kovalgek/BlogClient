@@ -106,8 +106,8 @@ class CreatePostViewController: UIViewController {
         guard let navigationController = navigationController, let user = selectedUser else {
             return
         }
-        let selectUserViewController = SelectUserViewController(selectedUser: user)
-        navigationController.pushViewController(selectUserViewController, animated: true)
+//        let selectUserViewController = SelectUserViewController(selectedUser: user)
+//        navigationController.pushViewController(selectUserViewController, animated: true)
     }
 
     func populateUsers() {

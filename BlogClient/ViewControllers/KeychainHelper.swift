@@ -1,0 +1,73 @@
+//
+//  KeychainHelper.swift
+//  BlogClient
+//
+//  Created by Anton Kovalchuk on 09/01/2023.
+//
+
+import Security
+import UIKit
+
+let keychainKey = "keychainKey"
+
+var token: String? {
+    get {
+        Keychain.load(key: keychainKey)
+    }
+    set {
+        if let newToken = newValue {
+            Keychain.save(key: keychainKey, data: newToken)
+        } else {
+            Keychain.delete(key: keychainKey)
+        }
+    }
+}
+
+enum Keychain {
+    @discardableResult
+    static func save(key: String, data: String) -> OSStatus {
+        let bytes: [UInt8] = .init(data.utf8)
+        let bytesAsData = Data(bytes)
+        let query = [
+            kSecClass: kSecClassGenericPassword,
+            kSecAttrAccount: key,
+            kSecValueData: bytesAsData
+        ] as [CFString: Any]
+        
+        SecItemDelete(query as CFDictionary)
+        
+        return SecItemAdd(query as CFDictionary, nil)
+    }
+    
+    @discardableResult
+    static func delete(key: String) -> OSStatus {
+        let query = [
+            kSecClass: kSecClassGenericPassword,
+            kSecAttrAccount: key
+        ] as [CFString: Any]
+        
+        return SecItemDelete(query as CFDictionary)
+    }
+    
+    static func load(key: String) -> String? {
+        let query = [
+            kSecClass: kSecClassGenericPassword,
+            kSecAttrAccount: key,
+            kSecReturnData: kCFBooleanTrue as Any,
+            kSecMatchLimit: kSecMatchLimitOne
+        ] as [CFString: Any]
+        
+        var dataTypeRef: AnyObject?
+        
+        let status: OSStatus = SecItemCopyMatching(query as CFDictionary, &dataTypeRef)
+        
+        if status == noErr {
+            guard let data = dataTypeRef as? Data else {
+                return nil
+            }
+            return String(decoding: data, as: UTF8.self)
+        } else {
+            return nil
+        }
+    }
+}

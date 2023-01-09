@@ -20,3 +20,4 @@ class OOPPostService: Service, PostServicing {
         return await client.sendRequest(endpoint: PostsEndpoint())
     }
 }
+

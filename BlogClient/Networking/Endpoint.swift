@@ -17,7 +17,7 @@ enum RequestMethod: String {
 
 protocol Endpoint {
     associatedtype Model
-    func parse(data: Data) -> Result<[Model], RequestError>
+    func parse(data: Data) -> Result<Model, RequestError>
     
     var scheme: String { get }
     var host: String { get }

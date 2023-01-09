@@ -9,8 +9,8 @@ import UIKit
 
 class PostsViewController: UIViewController {
 
+    private let service = POPPostService()
     private var posts: [Post] = []
-    // private let postsRequest = ResourceRequest<Post>(resourcePath: "posts")
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
@@ -40,10 +40,11 @@ class PostsViewController: UIViewController {
 
         self.title = "Posts"
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(goToCreatePost))
-
         view.addSubview(tableView)
         setupTableViewLayouts(tableView)
+        
+        let loginViewController = LoginViewController()
+        navigationController?.present(loginViewController, animated: true)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -59,20 +60,9 @@ class PostsViewController: UIViewController {
         navigationController.pushViewController(createPostViewController, animated: true)
     }
 
-    let service = POPPostService()
 
     @objc func refresh(_ sender: UIRefreshControl?) {
 
-//        let transport = Transport()
-//        let parser = PostParser()
-//        let postService = PostService(transport: transport, parser: parser)
-//        
-//        postService.loadPosts { posts in
-//            self.posts = posts
-//            DispatchQueue.main.async { [weak self] in
-//                self?.tableView.reloadData()
-//            }
-//        }
         Task(priority: .background) {
             let result = await service.posts()
             switch result {
@@ -83,26 +73,6 @@ class PostsViewController: UIViewController {
                 print(error)
             }
         }
-        
-
-//        postsRequest.getAll { [weak self] postResult in
-//            DispatchQueue.main.async {
-//                sender?.endRefreshing()
-//            }
-//
-//            switch postResult {
-//            case .failure:
-//                ErrorPresenter.showError(
-//                    message: "There was an error getting the posts",
-//                    on: self)
-//            case .success(let posts):
-//                DispatchQueue.main.async { [weak self] in
-//                    guard let self = self else { return }
-//                    self.posts = posts
-//                    self.tableView.reloadData()
-//                }
-//            }
-//        }
     }
 }
 
@@ -124,7 +94,7 @@ extension PostsViewController: UITableViewDelegate {
 extension PostsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -8,16 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		4A1F8F3C275EC153006C6E26 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1F8F3B275EC153006C6E26 /* PostViewController.swift */; };
+		4A8E8F1B296B5C12004FCEEA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8F1A296B5C12004FCEEA /* LoginViewController.swift */; };
+		4A8E8F1E296B6E39004FCEEA /* LoginEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8F1D296B6E39004FCEEA /* LoginEndpoint.swift */; };
+		4A8E8F20296B71B9004FCEEA /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8F1F296B71B9004FCEEA /* Token.swift */; };
+		4A8E8F22296B71E2004FCEEA /* POPLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8F21296B71E2004FCEEA /* POPLoginService.swift */; };
+		4A8E8F24296B88F4004FCEEA /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8F23296B88F4004FCEEA /* KeychainHelper.swift */; };
 		4AB3A59C27654D2A0004F4DE /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3A59B27654D2A0004F4DE /* CreatePostViewController.swift */; };
 		4AD99219275CDDA2007ABB73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD99218275CDDA2007ABB73 /* AppDelegate.swift */; };
 		4AD9921B275CDDA2007ABB73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9921A275CDDA2007ABB73 /* SceneDelegate.swift */; };
 		4AD9921D275CDDA2007ABB73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9921C275CDDA2007ABB73 /* ViewController.swift */; };
 		4AD99222275CDDA6007ABB73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AD99221275CDDA6007ABB73 /* Assets.xcassets */; };
 		4AD99225275CDDA6007ABB73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AD99223275CDDA6007ABB73 /* LaunchScreen.storyboard */; };
-		4AD9922E275CDE91007ABB73 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9922D275CDE91007ABB73 /* MainTabBarViewController.swift */; };
 		4AD99230275CE14F007ABB73 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9922F275CE14F007ABB73 /* PostsViewController.swift */; };
-		4AD99232275CE21F007ABB73 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD99231275CE21F007ABB73 /* UsersViewController.swift */; };
-		4AD99234275CE229007ABB73 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD99233275CE229007ABB73 /* CategoriesViewController.swift */; };
 		4AD99245275CED63007ABB73 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD99241275CED63007ABB73 /* Category.swift */; };
 		4AD99246275CED63007ABB73 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD99242275CED63007ABB73 /* User.swift */; };
 		4AD99247275CED63007ABB73 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD99243275CED63007ABB73 /* Post.swift */; };
@@ -28,14 +30,15 @@
 		4ADBAA31296793B80019CE69 /* PostsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBAA30296793B80019CE69 /* PostsEndpoint.swift */; };
 		4ADBAA35296997060019CE69 /* OOPPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBAA34296997060019CE69 /* OOPPostService.swift */; };
 		4ADBAA37296997460019CE69 /* POPPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBAA36296997460019CE69 /* POPPostService.swift */; };
-		4AEB126227656EF000FDD09A /* CreateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB126127656EF000FDD09A /* CreateCategoryViewController.swift */; };
-		4AEB126427656EF900FDD09A /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB126327656EF900FDD09A /* CreateUserViewController.swift */; };
-		4AEB126627657E8300FDD09A /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB126527657E8300FDD09A /* SelectUserViewController.swift */; };
-		4AEB126827657EA000FDD09A /* AddToCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB126727657EA000FDD09A /* AddToCategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4A1F8F3B275EC153006C6E26 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		4A8E8F1A296B5C12004FCEEA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4A8E8F1D296B6E39004FCEEA /* LoginEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEndpoint.swift; sourceTree = "<group>"; };
+		4A8E8F1F296B71B9004FCEEA /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		4A8E8F21296B71E2004FCEEA /* POPLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POPLoginService.swift; sourceTree = "<group>"; };
+		4A8E8F23296B88F4004FCEEA /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		4AB3A59B27654D2A0004F4DE /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		4AD99215275CDDA2007ABB73 /* BlogClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AD99218275CDDA2007ABB73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,10 +47,7 @@
 		4AD99221275CDDA6007ABB73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AD99224275CDDA6007ABB73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4AD99226275CDDA7007ABB73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4AD9922D275CDE91007ABB73 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		4AD9922F275CE14F007ABB73 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
-		4AD99231275CE21F007ABB73 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
-		4AD99233275CE229007ABB73 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		4AD99241275CED63007ABB73 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4AD99242275CED63007ABB73 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4AD99243275CED63007ABB73 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -58,10 +58,6 @@
 		4ADBAA30296793B80019CE69 /* PostsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsEndpoint.swift; sourceTree = "<group>"; };
 		4ADBAA34296997060019CE69 /* OOPPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OOPPostService.swift; sourceTree = "<group>"; };
 		4ADBAA36296997460019CE69 /* POPPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POPPostService.swift; sourceTree = "<group>"; };
-		4AEB126127656EF000FDD09A /* CreateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewController.swift; sourceTree = "<group>"; };
-		4AEB126327656EF900FDD09A /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
-		4AEB126527657E8300FDD09A /* SelectUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
-		4AEB126727657EA000FDD09A /* AddToCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,12 +84,29 @@
 			children = (
 				4ADBAA33296996EE0019CE69 /* POP */,
 				4ADBAA32296996E80019CE69 /* OOP */,
+				4A8E8F1C296B6E29004FCEEA /* LoginService */,
 				4A2D232227A6018A0061D8A9 /* PostService */,
 				4ADBAA2A29678E510019CE69 /* Endpoint.swift */,
 				4ADBAA2E29678FB60019CE69 /* HTTPClient.swift */,
 				4ADBAA2C29678ECA0019CE69 /* RequestError.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		4A8E8F19296B5C03004FCEEA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4A8E8F1A296B5C12004FCEEA /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4A8E8F1C296B6E29004FCEEA /* LoginService */ = {
+			isa = PBXGroup;
+			children = (
+				4A8E8F1D296B6E39004FCEEA /* LoginEndpoint.swift */,
+			);
+			path = LoginService;
 			sourceTree = "<group>";
 		};
 		4AD9920C275CDDA2007ABB73 = {
@@ -131,10 +144,9 @@
 		4AD9922C275CDE69007ABB73 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4A8E8F19296B5C03004FCEEA /* Login */,
 				4AEB126B2765FFD300FDD09A /* Posts */,
-				4AEB126A2765FFC500FDD09A /* Categories */,
-				4AEB12692765FFA700FDD09A /* Users */,
-				4AD9922D275CDE91007ABB73 /* MainTabBarViewController.swift */,
+				4A8E8F23296B88F4004FCEEA /* KeychainHelper.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -146,6 +158,7 @@
 				4AD99241275CED63007ABB73 /* Category.swift */,
 				4AD99244275CED63007ABB73 /* CreatePostData.swift */,
 				4AD99242275CED63007ABB73 /* User.swift */,
+				4A8E8F1F296B71B9004FCEEA /* Token.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -162,33 +175,14 @@
 			isa = PBXGroup;
 			children = (
 				4ADBAA36296997460019CE69 /* POPPostService.swift */,
+				4A8E8F21296B71E2004FCEEA /* POPLoginService.swift */,
 			);
 			path = POP;
-			sourceTree = "<group>";
-		};
-		4AEB12692765FFA700FDD09A /* Users */ = {
-			isa = PBXGroup;
-			children = (
-				4AEB126327656EF900FDD09A /* CreateUserViewController.swift */,
-				4AD99231275CE21F007ABB73 /* UsersViewController.swift */,
-			);
-			path = Users;
-			sourceTree = "<group>";
-		};
-		4AEB126A2765FFC500FDD09A /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				4AEB126127656EF000FDD09A /* CreateCategoryViewController.swift */,
-				4AD99233275CE229007ABB73 /* CategoriesViewController.swift */,
-			);
-			path = Categories;
 			sourceTree = "<group>";
 		};
 		4AEB126B2765FFD300FDD09A /* Posts */ = {
 			isa = PBXGroup;
 			children = (
-				4AEB126527657E8300FDD09A /* SelectUserViewController.swift */,
-				4AEB126727657EA000FDD09A /* AddToCategoryViewController.swift */,
 				4AD9922F275CE14F007ABB73 /* PostsViewController.swift */,
 				4A1F8F3B275EC153006C6E26 /* PostViewController.swift */,
 				4AB3A59B27654D2A0004F4DE /* CreatePostViewController.swift */,
@@ -266,27 +260,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A8E8F1B296B5C12004FCEEA /* LoginViewController.swift in Sources */,
 				4AD9921D275CDDA2007ABB73 /* ViewController.swift in Sources */,
 				4ADBAA35296997060019CE69 /* OOPPostService.swift in Sources */,
 				4AD99247275CED63007ABB73 /* Post.swift in Sources */,
+				4A8E8F24296B88F4004FCEEA /* KeychainHelper.swift in Sources */,
 				4A1F8F3C275EC153006C6E26 /* PostViewController.swift in Sources */,
-				4AEB126627657E8300FDD09A /* SelectUserViewController.swift in Sources */,
 				4ADBAA37296997460019CE69 /* POPPostService.swift in Sources */,
-				4AD99232275CE21F007ABB73 /* UsersViewController.swift in Sources */,
-				4AD9922E275CDE91007ABB73 /* MainTabBarViewController.swift in Sources */,
+				4A8E8F1E296B6E39004FCEEA /* LoginEndpoint.swift in Sources */,
 				4ADBAA31296793B80019CE69 /* PostsEndpoint.swift in Sources */,
-				4AEB126227656EF000FDD09A /* CreateCategoryViewController.swift in Sources */,
-				4AEB126827657EA000FDD09A /* AddToCategoryViewController.swift in Sources */,
 				4AD99246275CED63007ABB73 /* User.swift in Sources */,
-				4AEB126427656EF900FDD09A /* CreateUserViewController.swift in Sources */,
+				4A8E8F22296B71E2004FCEEA /* POPLoginService.swift in Sources */,
 				4AD99248275CED63007ABB73 /* CreatePostData.swift in Sources */,
 				4ADBAA2B29678E510019CE69 /* Endpoint.swift in Sources */,
 				4AD99219275CDDA2007ABB73 /* AppDelegate.swift in Sources */,
 				4AD9921B275CDDA2007ABB73 /* SceneDelegate.swift in Sources */,
 				4AD99245275CED63007ABB73 /* Category.swift in Sources */,
 				4ADBAA2D29678ECA0019CE69 /* RequestError.swift in Sources */,
+				4A8E8F20296B71B9004FCEEA /* Token.swift in Sources */,
 				4ADBAA2F29678FB60019CE69 /* HTTPClient.swift in Sources */,
-				4AD99234275CE229007ABB73 /* CategoriesViewController.swift in Sources */,
 				4AB3A59C27654D2A0004F4DE /* CreatePostViewController.swift in Sources */,
 				4AD99230275CE14F007ABB73 /* PostsViewController.swift in Sources */,
 			);

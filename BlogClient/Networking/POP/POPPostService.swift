@@ -13,6 +13,7 @@ protocol PostServicing {
 
 struct POPPostService: HTTPClient, PostServicing {
     func posts() async -> Result<[Post], RequestError> {
-        return await sendRequest(endpoint: PostsEndpoint())
+        await sendRequest(endpoint: PostsEndpoint())
     }
 }
+

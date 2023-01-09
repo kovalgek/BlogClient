@@ -63,7 +63,6 @@ class PostViewController: UIViewController {
 
         view.addSubview(tableView)
         setupTableViewLayouts(tableView)
-        
     }
 
     @objc private func goToEditPost() {

@@ -8,11 +8,11 @@
 import Foundation
 
 protocol HTTPClient {
-    func sendRequest<T>(endpoint: T) async -> Result<[T.Model], RequestError> where T: Endpoint
+    func sendRequest<T>(endpoint: T) async -> Result<T.Model, RequestError> where T: Endpoint
 }
 
 extension HTTPClient {
-    func sendRequest<T>(endpoint: T) async -> Result<[T.Model], RequestError> where T: Endpoint {
+    func sendRequest<T>(endpoint: T) async -> Result<T.Model, RequestError> where T: Endpoint {
         
         var urlComponents = URLComponents()
         urlComponents.scheme = endpoint.scheme
