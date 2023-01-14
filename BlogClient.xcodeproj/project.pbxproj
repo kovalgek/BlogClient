@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		4A1F8F3C275EC153006C6E26 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1F8F3B275EC153006C6E26 /* PostViewController.swift */; };
+		4A2492BE2972E13D00967BF4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2492BD2972E13D00967BF4 /* Coordinator.swift */; };
+		4A2492C02972E19400967BF4 /* PostsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2492BF2972E19400967BF4 /* PostsCoordinator.swift */; };
+		4A2492C22972E1C600967BF4 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2492C12972E1C600967BF4 /* ViewControllerFactory.swift */; };
+		4A2492C52972E30900967BF4 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2492C42972E30900967BF4 /* PostsViewModel.swift */; };
+		4A2492C82972E35C00967BF4 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2492C72972E35C00967BF4 /* Observable.swift */; };
+		4A2492CA2972E67900967BF4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2492C92972E67900967BF4 /* LoginViewModel.swift */; };
+		4A2492CC2973012D00967BF4 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2492CB2973012D00967BF4 /* LoginCoordinator.swift */; };
+		4A2492CE297306A600967BF4 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2492CD297306A600967BF4 /* Auth.swift */; };
+		4A2492D029730B1E00967BF4 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2492CF29730B1E00967BF4 /* PostViewModel.swift */; };
 		4A8E8F1B296B5C12004FCEEA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8F1A296B5C12004FCEEA /* LoginViewController.swift */; };
 		4A8E8F1E296B6E39004FCEEA /* LoginEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8F1D296B6E39004FCEEA /* LoginEndpoint.swift */; };
 		4A8E8F20296B71B9004FCEEA /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8F1F296B71B9004FCEEA /* Token.swift */; };
@@ -34,6 +43,15 @@
 
 /* Begin PBXFileReference section */
 		4A1F8F3B275EC153006C6E26 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		4A2492BD2972E13D00967BF4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		4A2492BF2972E19400967BF4 /* PostsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCoordinator.swift; sourceTree = "<group>"; };
+		4A2492C12972E1C600967BF4 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		4A2492C42972E30900967BF4 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		4A2492C72972E35C00967BF4 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		4A2492C92972E67900967BF4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		4A2492CB2973012D00967BF4 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		4A2492CD297306A600967BF4 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		4A2492CF29730B1E00967BF4 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		4A8E8F1A296B5C12004FCEEA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4A8E8F1D296B6E39004FCEEA /* LoginEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEndpoint.swift; sourceTree = "<group>"; };
 		4A8E8F1F296B71B9004FCEEA /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -71,21 +89,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4A2D232227A6018A0061D8A9 /* PostService */ = {
+		4A2492BC2972E12A00967BF4 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				4A2492BD2972E13D00967BF4 /* Coordinator.swift */,
+				4A2492BF2972E19400967BF4 /* PostsCoordinator.swift */,
+				4A2492CB2973012D00967BF4 /* LoginCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		4A2492C32972E2F800967BF4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4A2492C42972E30900967BF4 /* PostsViewModel.swift */,
+				4A2492C92972E67900967BF4 /* LoginViewModel.swift */,
+				4A2492CF29730B1E00967BF4 /* PostViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4A2492C62972E35700967BF4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4A8E8F23296B88F4004FCEEA /* KeychainHelper.swift */,
+				4A2492C72972E35C00967BF4 /* Observable.swift */,
+				4A2492CD297306A600967BF4 /* Auth.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4A2D232227A6018A0061D8A9 /* PostsService */ = {
+			isa = PBXGroup;
+			children = (
+				4ADBAA34296997060019CE69 /* OOPPostService.swift */,
+				4ADBAA36296997460019CE69 /* POPPostService.swift */,
 				4ADBAA30296793B80019CE69 /* PostsEndpoint.swift */,
 			);
-			path = PostService;
+			path = PostsService;
 			sourceTree = "<group>";
 		};
 		4A8A89552767F3F1003CF901 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				4ADBAA33296996EE0019CE69 /* POP */,
-				4ADBAA32296996E80019CE69 /* OOP */,
 				4A8E8F1C296B6E29004FCEEA /* LoginService */,
-				4A2D232227A6018A0061D8A9 /* PostService */,
+				4A2D232227A6018A0061D8A9 /* PostsService */,
 				4ADBAA2A29678E510019CE69 /* Endpoint.swift */,
 				4ADBAA2E29678FB60019CE69 /* HTTPClient.swift */,
 				4ADBAA2C29678ECA0019CE69 /* RequestError.swift */,
@@ -104,6 +152,7 @@
 		4A8E8F1C296B6E29004FCEEA /* LoginService */ = {
 			isa = PBXGroup;
 			children = (
+				4A8E8F21296B71E2004FCEEA /* POPLoginService.swift */,
 				4A8E8F1D296B6E39004FCEEA /* LoginEndpoint.swift */,
 			);
 			path = LoginService;
@@ -128,6 +177,10 @@
 		4AD99217275CDDA2007ABB73 /* BlogClient */ = {
 			isa = PBXGroup;
 			children = (
+				4A2492C62972E35700967BF4 /* Utils */,
+				4A2492C32972E2F800967BF4 /* ViewModels */,
+				4A2492C12972E1C600967BF4 /* ViewControllerFactory.swift */,
+				4A2492BC2972E12A00967BF4 /* Coordinators */,
 				4A8A89552767F3F1003CF901 /* Networking */,
 				4AD99240275CED57007ABB73 /* Models */,
 				4AD9922C275CDE69007ABB73 /* ViewControllers */,
@@ -146,7 +199,6 @@
 			children = (
 				4A8E8F19296B5C03004FCEEA /* Login */,
 				4AEB126B2765FFD300FDD09A /* Posts */,
-				4A8E8F23296B88F4004FCEEA /* KeychainHelper.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -161,23 +213,6 @@
 				4A8E8F1F296B71B9004FCEEA /* Token.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		4ADBAA32296996E80019CE69 /* OOP */ = {
-			isa = PBXGroup;
-			children = (
-				4ADBAA34296997060019CE69 /* OOPPostService.swift */,
-			);
-			path = OOP;
-			sourceTree = "<group>";
-		};
-		4ADBAA33296996EE0019CE69 /* POP */ = {
-			isa = PBXGroup;
-			children = (
-				4ADBAA36296997460019CE69 /* POPPostService.swift */,
-				4A8E8F21296B71E2004FCEEA /* POPLoginService.swift */,
-			);
-			path = POP;
 			sourceTree = "<group>";
 		};
 		4AEB126B2765FFD300FDD09A /* Posts */ = {
@@ -260,13 +295,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A2492D029730B1E00967BF4 /* PostViewModel.swift in Sources */,
+				4A2492C82972E35C00967BF4 /* Observable.swift in Sources */,
 				4A8E8F1B296B5C12004FCEEA /* LoginViewController.swift in Sources */,
+				4A2492CC2973012D00967BF4 /* LoginCoordinator.swift in Sources */,
 				4AD9921D275CDDA2007ABB73 /* ViewController.swift in Sources */,
 				4ADBAA35296997060019CE69 /* OOPPostService.swift in Sources */,
 				4AD99247275CED63007ABB73 /* Post.swift in Sources */,
 				4A8E8F24296B88F4004FCEEA /* KeychainHelper.swift in Sources */,
 				4A1F8F3C275EC153006C6E26 /* PostViewController.swift in Sources */,
+				4A2492BE2972E13D00967BF4 /* Coordinator.swift in Sources */,
+				4A2492CA2972E67900967BF4 /* LoginViewModel.swift in Sources */,
 				4ADBAA37296997460019CE69 /* POPPostService.swift in Sources */,
+				4A2492C02972E19400967BF4 /* PostsCoordinator.swift in Sources */,
+				4A2492CE297306A600967BF4 /* Auth.swift in Sources */,
 				4A8E8F1E296B6E39004FCEEA /* LoginEndpoint.swift in Sources */,
 				4ADBAA31296793B80019CE69 /* PostsEndpoint.swift in Sources */,
 				4AD99246275CED63007ABB73 /* User.swift in Sources */,
@@ -279,6 +321,8 @@
 				4ADBAA2D29678ECA0019CE69 /* RequestError.swift in Sources */,
 				4A8E8F20296B71B9004FCEEA /* Token.swift in Sources */,
 				4ADBAA2F29678FB60019CE69 /* HTTPClient.swift in Sources */,
+				4A2492C52972E30900967BF4 /* PostsViewModel.swift in Sources */,
+				4A2492C22972E1C600967BF4 /* ViewControllerFactory.swift in Sources */,
 				4AB3A59C27654D2A0004F4DE /* CreatePostViewController.swift in Sources */,
 				4AD99230275CE14F007ABB73 /* PostsViewController.swift in Sources */,
 			);

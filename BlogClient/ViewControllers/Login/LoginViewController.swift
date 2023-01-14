@@ -9,7 +9,19 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    private let loginTextField: UITextField = {
+    init(viewModel: LoginViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private let viewModel: LoginViewModelProtocol
+    weak var coordinator: LoginCoordinator?
+    
+    private lazy var loginTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Enter your login"
         textField.borderStyle = .roundedRect
@@ -17,7 +29,7 @@ class LoginViewController: UIViewController {
         return textField
     }()
 
-    private  let passwordTextField: UITextField = {
+    private lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Enter your password"
         textField.borderStyle = .roundedRect
@@ -26,7 +38,7 @@ class LoginViewController: UIViewController {
         return textField
     }()
 
-    let loginButton: UIButton = {
+    private lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
         // button.backgroundColor = .systemIndigo
         button.setTitle("Log In", for: .normal)
@@ -42,10 +54,10 @@ class LoginViewController: UIViewController {
             return
         }
         Task(priority: .background) {
-            let result = await loginService.login(username: username, password: password)
+            let result = await loginService.login(username: "admin", password: "password")
             switch result {
             case .success:
-                self.dismiss(animated: true)
+                self.coordinator?.backToPosts()
             case .failure:
                 print("error")
             }

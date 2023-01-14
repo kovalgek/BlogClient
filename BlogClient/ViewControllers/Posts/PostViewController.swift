@@ -9,23 +9,6 @@ import UIKit
 
 class PostViewController: UIViewController {
 
-    var post: Post? {
-        didSet {
-            updatePostView()
-        }
-    }
-
-    var user: User? {
-        didSet {
-            updatePostView()
-        }
-    }
-
-    var categories: [Category] = [] {
-        didSet {
-            updatePostView()
-        }
-    }
 
     //private var post: Post
 

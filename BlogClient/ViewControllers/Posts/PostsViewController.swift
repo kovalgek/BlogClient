@@ -9,8 +9,17 @@ import UIKit
 
 class PostsViewController: UIViewController {
 
-    private let service = POPPostService()
-    private var posts: [Post] = []
+    init(viewModel: PostsViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private let viewModel: PostsViewModelProtocol    
+    weak var coordinator: PostsCoordinator?
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
@@ -43,9 +52,21 @@ class PostsViewController: UIViewController {
         view.addSubview(tableView)
         setupTableViewLayouts(tableView)
         
-        let loginViewController = LoginViewController()
-        navigationController?.present(loginViewController, animated: true)
+        coordinator?.presentLogin()
+        
+        setupBindings()
+        viewModel.loadPosts()
     }
+    
+    private func setupBindings() {
+        viewModel.posts.bind { _ in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -63,16 +84,7 @@ class PostsViewController: UIViewController {
 
     @objc func refresh(_ sender: UIRefreshControl?) {
 
-        Task(priority: .background) {
-            let result = await service.posts()
-            switch result {
-            case .success(let posts):
-                self.posts = posts
-                self.tableView.reloadData()
-            case .failure(let error):
-                print(error)
-            }
-        }
+
     }
 }
 
@@ -85,7 +97,7 @@ extension PostsViewController: UITableViewDelegate {
         guard let indexPath = tableView.indexPathForSelectedRow else {
             return
         }
-        let post = posts[indexPath.row]
+        let post = viewModel.posts.value[indexPath.row]
         let postViewController = PostViewController(post: post)
         navigationController?.pushViewController(postViewController, animated: true)
     }
@@ -94,12 +106,12 @@ extension PostsViewController: UITableViewDelegate {
 extension PostsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        posts.count
+        viewModel.posts.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = posts[indexPath.row].title
+        cell.textLabel?.text = viewModel.posts.value[indexPath.row].title
         return cell
     }
 }

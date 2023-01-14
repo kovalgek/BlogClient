@@ -14,7 +14,7 @@ struct PostsEndpoint: Endpoint {
     var path: String { "/api/posts" }
     var method: RequestMethod { .get }
     var header: [String: String]? {
-        if let token = token {
+        if let token = Auth.token {
             return ["Authorization": "Bearer \(token)"]
         }
         return nil

@@ -8,21 +8,6 @@
 import Security
 import UIKit
 
-let keychainKey = "keychainKey"
-
-var token: String? {
-    get {
-        Keychain.load(key: keychainKey)
-    }
-    set {
-        if let newToken = newValue {
-            Keychain.save(key: keychainKey, data: newToken)
-        } else {
-            Keychain.delete(key: keychainKey)
-        }
-    }
-}
-
 enum Keychain {
     @discardableResult
     static func save(key: String, data: String) -> OSStatus {
