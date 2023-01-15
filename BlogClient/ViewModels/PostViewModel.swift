@@ -8,17 +8,28 @@
 import Foundation
 
 protocol PostViewModelProtocol {
-    func loadPost()
-    var post: Observable<Post> { get }
+    func loadPost(id: UUID)
+    var post: Observable<Post?> { get }
 }
 
 class PostViewModel: PostViewModelProtocol {
     
-    private let service: Postse
-    
-    func loadPost() {
-        
+    init(service: PostServicing) {
+        self.service = service
     }
     
-    var post: Observable<Post> = Observable(nil)
+    private let service: PostServicing
+    
+    func loadPost(id: UUID) {
+        service.loadPost(id: id) { result in
+            switch result {
+            case .success(let post):
+                self.post.value = post
+            case .failure(let error):
+                print("error=\(error)")
+            }
+        }
+    }
+    
+    var post: Observable<Post?> = Observable(nil)
 }

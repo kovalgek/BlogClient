@@ -17,10 +17,12 @@
 		4A2492CC2973012D00967BF4 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2492CB2973012D00967BF4 /* LoginCoordinator.swift */; };
 		4A2492CE297306A600967BF4 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2492CD297306A600967BF4 /* Auth.swift */; };
 		4A2492D029730B1E00967BF4 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2492CF29730B1E00967BF4 /* PostViewModel.swift */; };
+		4A2492D329730BAF00967BF4 /* PostEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2492D229730BAF00967BF4 /* PostEndpoint.swift */; };
+		4A2492D529730BB800967BF4 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2492D429730BB800967BF4 /* PostService.swift */; };
 		4A8E8F1B296B5C12004FCEEA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8F1A296B5C12004FCEEA /* LoginViewController.swift */; };
 		4A8E8F1E296B6E39004FCEEA /* LoginEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8F1D296B6E39004FCEEA /* LoginEndpoint.swift */; };
 		4A8E8F20296B71B9004FCEEA /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8F1F296B71B9004FCEEA /* Token.swift */; };
-		4A8E8F22296B71E2004FCEEA /* POPLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8F21296B71E2004FCEEA /* POPLoginService.swift */; };
+		4A8E8F22296B71E2004FCEEA /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8F21296B71E2004FCEEA /* LoginService.swift */; };
 		4A8E8F24296B88F4004FCEEA /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8F23296B88F4004FCEEA /* KeychainHelper.swift */; };
 		4AB3A59C27654D2A0004F4DE /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3A59B27654D2A0004F4DE /* CreatePostViewController.swift */; };
 		4AD99219275CDDA2007ABB73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD99218275CDDA2007ABB73 /* AppDelegate.swift */; };
@@ -37,8 +39,7 @@
 		4ADBAA2D29678ECA0019CE69 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBAA2C29678ECA0019CE69 /* RequestError.swift */; };
 		4ADBAA2F29678FB60019CE69 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBAA2E29678FB60019CE69 /* HTTPClient.swift */; };
 		4ADBAA31296793B80019CE69 /* PostsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBAA30296793B80019CE69 /* PostsEndpoint.swift */; };
-		4ADBAA35296997060019CE69 /* OOPPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBAA34296997060019CE69 /* OOPPostService.swift */; };
-		4ADBAA37296997460019CE69 /* POPPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBAA36296997460019CE69 /* POPPostService.swift */; };
+		4ADBAA37296997460019CE69 /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBAA36296997460019CE69 /* PostsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,10 +53,12 @@
 		4A2492CB2973012D00967BF4 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		4A2492CD297306A600967BF4 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		4A2492CF29730B1E00967BF4 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		4A2492D229730BAF00967BF4 /* PostEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEndpoint.swift; sourceTree = "<group>"; };
+		4A2492D429730BB800967BF4 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		4A8E8F1A296B5C12004FCEEA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4A8E8F1D296B6E39004FCEEA /* LoginEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEndpoint.swift; sourceTree = "<group>"; };
 		4A8E8F1F296B71B9004FCEEA /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		4A8E8F21296B71E2004FCEEA /* POPLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POPLoginService.swift; sourceTree = "<group>"; };
+		4A8E8F21296B71E2004FCEEA /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		4A8E8F23296B88F4004FCEEA /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		4AB3A59B27654D2A0004F4DE /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		4AD99215275CDDA2007ABB73 /* BlogClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,8 +77,7 @@
 		4ADBAA2C29678ECA0019CE69 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		4ADBAA2E29678FB60019CE69 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		4ADBAA30296793B80019CE69 /* PostsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsEndpoint.swift; sourceTree = "<group>"; };
-		4ADBAA34296997060019CE69 /* OOPPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OOPPostService.swift; sourceTree = "<group>"; };
-		4ADBAA36296997460019CE69 /* POPPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POPPostService.swift; sourceTree = "<group>"; };
+		4ADBAA36296997460019CE69 /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,11 +121,19 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		4A2492D129730BA300967BF4 /* PostService */ = {
+			isa = PBXGroup;
+			children = (
+				4A2492D229730BAF00967BF4 /* PostEndpoint.swift */,
+				4A2492D429730BB800967BF4 /* PostService.swift */,
+			);
+			path = PostService;
+			sourceTree = "<group>";
+		};
 		4A2D232227A6018A0061D8A9 /* PostsService */ = {
 			isa = PBXGroup;
 			children = (
-				4ADBAA34296997060019CE69 /* OOPPostService.swift */,
-				4ADBAA36296997460019CE69 /* POPPostService.swift */,
+				4ADBAA36296997460019CE69 /* PostsService.swift */,
 				4ADBAA30296793B80019CE69 /* PostsEndpoint.swift */,
 			);
 			path = PostsService;
@@ -132,6 +142,7 @@
 		4A8A89552767F3F1003CF901 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				4A2492D129730BA300967BF4 /* PostService */,
 				4A8E8F1C296B6E29004FCEEA /* LoginService */,
 				4A2D232227A6018A0061D8A9 /* PostsService */,
 				4ADBAA2A29678E510019CE69 /* Endpoint.swift */,
@@ -152,7 +163,7 @@
 		4A8E8F1C296B6E29004FCEEA /* LoginService */ = {
 			isa = PBXGroup;
 			children = (
-				4A8E8F21296B71E2004FCEEA /* POPLoginService.swift */,
+				4A8E8F21296B71E2004FCEEA /* LoginService.swift */,
 				4A8E8F1D296B6E39004FCEEA /* LoginEndpoint.swift */,
 			);
 			path = LoginService;
@@ -298,21 +309,22 @@
 				4A2492D029730B1E00967BF4 /* PostViewModel.swift in Sources */,
 				4A2492C82972E35C00967BF4 /* Observable.swift in Sources */,
 				4A8E8F1B296B5C12004FCEEA /* LoginViewController.swift in Sources */,
+				4A2492D529730BB800967BF4 /* PostService.swift in Sources */,
 				4A2492CC2973012D00967BF4 /* LoginCoordinator.swift in Sources */,
 				4AD9921D275CDDA2007ABB73 /* ViewController.swift in Sources */,
-				4ADBAA35296997060019CE69 /* OOPPostService.swift in Sources */,
 				4AD99247275CED63007ABB73 /* Post.swift in Sources */,
 				4A8E8F24296B88F4004FCEEA /* KeychainHelper.swift in Sources */,
 				4A1F8F3C275EC153006C6E26 /* PostViewController.swift in Sources */,
 				4A2492BE2972E13D00967BF4 /* Coordinator.swift in Sources */,
 				4A2492CA2972E67900967BF4 /* LoginViewModel.swift in Sources */,
-				4ADBAA37296997460019CE69 /* POPPostService.swift in Sources */,
+				4ADBAA37296997460019CE69 /* PostsService.swift in Sources */,
 				4A2492C02972E19400967BF4 /* PostsCoordinator.swift in Sources */,
 				4A2492CE297306A600967BF4 /* Auth.swift in Sources */,
 				4A8E8F1E296B6E39004FCEEA /* LoginEndpoint.swift in Sources */,
 				4ADBAA31296793B80019CE69 /* PostsEndpoint.swift in Sources */,
 				4AD99246275CED63007ABB73 /* User.swift in Sources */,
-				4A8E8F22296B71E2004FCEEA /* POPLoginService.swift in Sources */,
+				4A2492D329730BAF00967BF4 /* PostEndpoint.swift in Sources */,
+				4A8E8F22296B71E2004FCEEA /* LoginService.swift in Sources */,
 				4AD99248275CED63007ABB73 /* CreatePostData.swift in Sources */,
 				4ADBAA2B29678E510019CE69 /* Endpoint.swift in Sources */,
 				4AD99219275CDDA2007ABB73 /* AppDelegate.swift in Sources */,

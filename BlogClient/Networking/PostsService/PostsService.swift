@@ -1,5 +1,5 @@
 //
-//  POPPostService.swift
+//  POPPostsService.swift
 //  BlogClient
 //
 //  Created by Anton Kovalchuk on 07/01/2023.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol PostServicing {
+protocol PostsServicing {
     func posts() async -> Result<[Post], RequestError>
 }
 
-struct POPPostService: HTTPClient, PostServicing {
+struct PostsService: HTTPClient, PostsServicing {
     func posts() async -> Result<[Post], RequestError> {
         await sendRequest(endpoint: PostsEndpoint())
     }

@@ -14,15 +14,15 @@ protocol PostsViewModelProtocol {
 
 class PostsViewModel: PostsViewModelProtocol {
     
-    private let postService: PostServicing
+    private let postsService: PostsServicing
     
-    init(postService: PostServicing) {
-        self.postService = postService
+    init(postsService: PostsServicing) {
+        self.postsService = postsService
     }
     
     func loadPosts() {
         Task(priority: .background) {
-            let result = await postService.posts()
+            let result = await postsService.posts()
             switch result {
             case .success(let posts):
                 self.posts.value = posts

@@ -65,8 +65,6 @@ class PostsViewController: UIViewController {
             }
         }
     }
-    
-
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -97,8 +95,9 @@ extension PostsViewController: UITableViewDelegate {
         guard let indexPath = tableView.indexPathForSelectedRow else {
             return
         }
+        tableView.deselectRow(at: indexPath, animated: true)
         let post = viewModel.posts.value[indexPath.row]
-        let postViewController = PostViewController(post: post)
+        let postViewController = ViewControllerFactory.postViewController(postID: post.id)
         navigationController?.pushViewController(postViewController, animated: true)
     }
 }

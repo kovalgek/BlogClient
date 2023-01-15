@@ -8,12 +8,19 @@
 import UIKit
 
 class PostViewController: UIViewController {
+    
+    enum SectionType: Int {
+        case title
+        case content
+        case user
+    }
 
-
-    //private var post: Post
-
-    init(post: Post) {
-        self.post = post
+    private let postID: UUID
+    private let viewModel: PostViewModel
+    
+    init(postID: UUID, viewModel: PostViewModel) {
+        self.postID = postID
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -46,106 +53,77 @@ class PostViewController: UIViewController {
 
         view.addSubview(tableView)
         setupTableViewLayouts(tableView)
+        
+        setupBindings()
+        viewModel.loadPost(id: postID)
+    }
+    
+    private func setupBindings() {
+        viewModel.post.bind { _ in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     @objc private func goToEditPost() {
         guard let navigationController = navigationController else {
             return
         }
-        let createPostViewController = CreatePostViewController(post: post)
-        navigationController.pushViewController(createPostViewController, animated: true)
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        getPostData()
-    }
-
-    func getPostData() {
-
-//        guard let post = post else {
-//            return
-//        }
-//
-//        let postDetailRequester = PostRequest(postID: post.id!)
-//        postDetailRequester.getUser { [weak self] result in
-//            switch result {
-//            case .success(let user):
-//                self?.user = user
-//            case .failure:
-//                let message =
-//                "There was an error getting the post’s user"
-//                ErrorPresenter.showError(message: message, on: self)
-//            }
-//        }
-//
-//        postDetailRequester.getCategories { [weak self] result in
-//            switch result {
-//            case .success(let categories):
-//                self?.categories = categories
-//            case .failure:
-//                let message =
-//                "There was an error getting the post’s categories"
-//                ErrorPresenter.showError(message: message, on: self)
-//            }
-//        }
-    }
-
-    func updatePostView() {
-        DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadData()
-        }
+        //let createPostViewController = CreatePostViewController(post: post)
+        //navigationController.pushViewController(createPostViewController, animated: true)
     }
 }
 
 extension PostViewController: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        3
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 3 ? categories.count : 1
+        1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
         switch indexPath.section {
-        case 0:
-            cell.textLabel?.text = post?.title ?? ""
-        case 1:
-            cell.textLabel?.text = post?.content ?? ""
-        case 2:
-            cell.textLabel?.text = user?.name
-        case 3:
-            cell.textLabel?.text = categories[indexPath.row].name
-        case 4:
-            cell.textLabel?.text = "Add To Category"
+        case SectionType.title.rawValue:
+            cell.textLabel?.text = viewModel.post.value?.title ?? ""
+        case SectionType.content.rawValue:
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.text = viewModel.post.value?.content ?? ""
+        case SectionType.user.rawValue:
+            cell.textLabel?.text = viewModel.post.value?.user.id.description ?? ""
         default:
             break
-        }
-        if indexPath.section == 4 {
-            cell.selectionStyle = .default
-            cell.isUserInteractionEnabled = true
-        } else {
-            cell.selectionStyle = .none
-            cell.isUserInteractionEnabled = false
         }
         return cell
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
-        case 0:
+        case SectionType.title.rawValue:
             return "Post"
-        case 1:
+        case SectionType.content.rawValue:
             return "Meaning"
-        case 2:
+        case SectionType.user.rawValue:
             return "User"
-        case 3:
-            return "Categories"
         default:
             return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case SectionType.title.rawValue:
+            return 44
+        case SectionType.content.rawValue:
+            return 300
+        case SectionType.user.rawValue:
+            return 44
+        default:
+            return 44
         }
     }
 }

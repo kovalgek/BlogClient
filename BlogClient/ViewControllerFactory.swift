@@ -10,14 +10,20 @@ import Foundation
 class ViewControllerFactory {
     
     static var postsViewController: PostsViewController {
-        let service = POPPostService()
-        let viewModel = PostsViewModel(postService: service)
+        let service = PostsService()
+        let viewModel = PostsViewModel(postsService: service)
         return PostsViewController(viewModel: viewModel)
     }
     
     static var loginViewController: LoginViewController {
-        let service = POPLoginService()
+        let service = LoginService()
         let viewModel = LoginViewModel(loginService: service)
         return LoginViewController(viewModel: viewModel)
+    }
+    
+    static func postViewController(postID: UUID) -> PostViewController {
+        let service = PostService()
+        let viewModel = PostViewModel(service: service)
+        return PostViewController(postID: postID, viewModel: viewModel)
     }
 }

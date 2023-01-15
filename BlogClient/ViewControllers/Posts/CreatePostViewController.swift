@@ -9,6 +9,19 @@ import UIKit
 
 class CreatePostViewController: UIViewController {
 
+    private let postID: UUID
+    private let viewModel: PostViewModel
+    
+    init(postID: UUID, viewModel: PostViewModel) {
+        self.postID = postID
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) is not supported")
+    }
+    
     private lazy var titleTextField: UITextField = {
         let titleTextField = UITextField()
         titleTextField.placeholder = "Enter title here"
@@ -32,7 +45,6 @@ class CreatePostViewController: UIViewController {
     }()
 
     private func applyConstraints(titleTextField: UITextField) {
-
         titleTextField.translatesAutoresizingMaskIntoConstraints = false
         titleTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
         titleTextField.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
@@ -41,7 +53,6 @@ class CreatePostViewController: UIViewController {
     }
 
     private func applyConstraints(contentTextField: UITextField) {
-
         contentTextField.translatesAutoresizingMaskIntoConstraints = false
         contentTextField.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 30).isActive = true
         contentTextField.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true

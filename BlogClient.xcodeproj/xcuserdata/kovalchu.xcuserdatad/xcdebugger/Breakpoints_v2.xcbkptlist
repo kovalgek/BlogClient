@@ -135,64 +135,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D513DFC3-9EC9-424C-BF01-32D42A5017D2"
+            uuid = "3A59B17E-ABB8-4FA4-A5C8-AB5EBC996390"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BlogClient/ViewControllers/Login/LoginViewController.swift"
+            filePath = "BlogClient/ViewControllers/Posts/PostViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "login()"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D513DFC3-9EC9-424C-BF01-32D42A5017D2 - b8a6b53a8f69de71"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in BlogClient.LoginViewController.login() -&gt; ()"
-                  moduleName = "BlogClient"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kovalchu/Documents/home/iOS/Blog/BlogClient/BlogClient/ViewControllers/Login/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "60">
-               </Location>
-               <Location
-                  uuid = "D513DFC3-9EC9-424C-BF01-32D42A5017D2 - 7435970f2080896a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in BlogClient.LoginViewController.login() -&gt; ()"
-                  moduleName = "BlogClient"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kovalchu/Documents/home/iOS/Blog/BlogClient/BlogClient/ViewControllers/Login/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "D513DFC3-9EC9-424C-BF01-32D42A5017D2 - 7fc0c2c664b26277"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in BlogClient.LoginViewController.login() -&gt; ()"
-                  moduleName = "BlogClient"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kovalchu/Documents/home/iOS/Blog/BlogClient/BlogClient/ViewControllers/Login/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "96">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9E3D35D-78C4-40CD-8387-BC71261DBC6E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlogClient/ViewControllers/Posts/PostViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "setupBindings()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1FA0BC93-0A98-47D9-9D4B-0A359029388B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlogClient/ViewControllers/Posts/PostViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

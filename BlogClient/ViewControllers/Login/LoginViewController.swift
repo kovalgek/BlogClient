@@ -47,19 +47,22 @@ class LoginViewController: UIViewController {
         return button
     }()
     
-    private let loginService = POPLoginService()
+    private let loginService = LoginService()
     
     @objc func login() {
-        guard let username = loginTextField.text, let password = passwordTextField.text else {
+        
+        guard let _ = loginTextField.text,
+              let _ = passwordTextField.text else {
             return
         }
-        Task(priority: .background) {
-            let result = await loginService.login(username: "admin", password: "password")
-            switch result {
-            case .success:
-                self.coordinator?.backToPosts()
-            case .failure:
-                print("error")
+        
+        loginService.login(username: "admin", password: "password") { error in
+            DispatchQueue.main.async {
+                guard let error = error else {
+                    self.coordinator?.backToPosts()
+                    return
+                }
+                print("error:\(error)")
             }
         }
     }

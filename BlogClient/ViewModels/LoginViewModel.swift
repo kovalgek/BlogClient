@@ -7,8 +7,12 @@
 
 import Foundation
 
+enum LoginViewModelError: Error {
+    case something
+}
+
 protocol LoginViewModelProtocol {
-    func login(username: String, password: String,  completion: @escaping (LoginResult) -> Void)
+    func login(username: String, password: String,  completion: @escaping (LoginViewModelError?) -> Void)
 }
 
 class LoginViewModel: LoginViewModelProtocol {
@@ -19,9 +23,18 @@ class LoginViewModel: LoginViewModelProtocol {
         self.loginService = loginService
     }
     
-    func login(username: String, password: String,  completion: @escaping (LoginResult) -> Void) {
-        loginService.login(username: username, password: password) { _ in
-            completion(.success)
+    func login(username: String, password: String,  completion: @escaping (LoginViewModelError?) -> Void) {
+        loginService.login(username: username, password: password) { error in
+            if let error = error {
+                completion(error.viewModelError)
+            }
+            completion(nil)
         }
+    }
+}
+
+extension LoginError {
+    var viewModelError: LoginViewModelError {
+        return .something
     }
 }
