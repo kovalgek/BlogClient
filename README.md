@@ -1,0 +1,1 @@
+This is a straightforward blog application that utilizes a custom backend. Its primary goal is to demonstrate the implementation of clean coding, new techniques such as reactive programming, and design methodologies.
