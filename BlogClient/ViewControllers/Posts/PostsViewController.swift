@@ -19,21 +19,14 @@ class PostsViewController: UIViewController {
     }
     
     private let viewModel: PostsViewModelProtocol    
-    weak var coordinator: PostsCoordinator?
+    weak var coordinator: (LoginPresenting & PostShowing & PostCreating)?
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.refreshControl = refreshControl
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
-    }()
-
-    private lazy var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
-        return refreshControl
     }()
 
     private func setupTableViewLayouts(_ tableView: UITableView) {
@@ -48,6 +41,7 @@ class PostsViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = "Posts"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createPost))
 
         view.addSubview(tableView)
         setupTableViewLayouts(tableView)
@@ -65,24 +59,9 @@ class PostsViewController: UIViewController {
             }
         }
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        refresh(nil)
-    }
-
-    @objc private func goToCreatePost() {
-        guard let navigationController = navigationController else {
-            return
-        }
-        let createPostViewController = CreatePostViewController()
-        navigationController.pushViewController(createPostViewController, animated: true)
-    }
-
-
-    @objc func refresh(_ sender: UIRefreshControl?) {
-
-
+    
+    @objc private func createPost() {
+        coordinator?.createPost()
     }
 }
 
@@ -97,8 +76,7 @@ extension PostsViewController: UITableViewDelegate {
         }
         tableView.deselectRow(at: indexPath, animated: true)
         let post = viewModel.posts.value[indexPath.row]
-        let postViewController = ViewControllerFactory.postViewController(postID: post.id)
-        navigationController?.pushViewController(postViewController, animated: true)
+        coordinator?.showPost(postID: post.id)
     }
 }
 

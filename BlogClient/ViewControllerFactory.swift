@@ -26,4 +26,10 @@ class ViewControllerFactory {
         let viewModel = PostViewModel(service: service)
         return PostViewController(postID: postID, viewModel: viewModel)
     }
+    
+    static func createPostViewController() -> CreatePostViewController {
+        let service = PostService()
+        let viewModel = CreatePostViewModel(service: service)
+        return CreatePostViewController(viewModel: viewModel)
+    }
 }

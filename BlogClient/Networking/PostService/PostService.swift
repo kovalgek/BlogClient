@@ -13,6 +13,7 @@ enum PostError: Error {
 
 protocol PostServicing {
     func loadPost(id: UUID, completion: @escaping (Result<Post, PostError>) -> Void)
+    func createPost(title: String, content: String, userID: UUID, completion: @escaping (Result<Post, PostError>) -> Void)
 }
 
 struct PostService: HTTPClient, PostServicing {
@@ -22,6 +23,18 @@ struct PostService: HTTPClient, PostServicing {
             case .success(let post):
                 completion(.success(post))
             case .failure(let error):
+                completion(.failure(error.postError))
+            }
+        }
+    }
+    
+    func createPost(title: String, content: String, userID: UUID, completion: @escaping (Result<Post, PostError>) -> Void) {
+        sendRequest(endpoint: CreatePostEndpoint(title: title, content: content, userID: userID)) { result in
+            switch result {
+            case .success(let post):
+                completion(.success(post))
+            case .failure(let error):
+                print(error)
                 completion(.failure(error.postError))
             }
         }

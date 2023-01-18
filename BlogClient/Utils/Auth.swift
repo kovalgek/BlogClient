@@ -10,6 +10,7 @@ import Foundation
 let keychainKey = "keychainKey"
 
 enum Auth {
+    static var userID: UUID?
     static var token: String? {
         get {
             Keychain.load(key: keychainKey)

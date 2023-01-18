@@ -27,7 +27,9 @@ struct LoginService: HTTPClient, LoginServicing {
     func login(username: String, password: String, completion: @escaping (LoginError?) -> Void) {
         sendRequest(endpoint: LoginEndpoint(username: username, password: password)) { result in
             switch result {
-            case .success:
+            case .success(let token):
+                Auth.token = token.value
+                Auth.userID = token.userID
                 completion(nil)
             case .failure(let error):
                 completion(error.loginError)

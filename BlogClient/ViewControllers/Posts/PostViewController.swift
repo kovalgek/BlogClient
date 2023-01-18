@@ -17,6 +17,7 @@ class PostViewController: UIViewController {
 
     private let postID: UUID
     private let viewModel: PostViewModel
+    weak var coordinator: Popable?
     
     init(postID: UUID, viewModel: PostViewModel) {
         self.postID = postID
@@ -49,8 +50,8 @@ class PostViewController: UIViewController {
 
         self.title = "Post"
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(goToEditPost))
-
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "<- Posts", style: .plain, target: self, action: #selector(goBack))
+        
         view.addSubview(tableView)
         setupTableViewLayouts(tableView)
         
@@ -66,12 +67,8 @@ class PostViewController: UIViewController {
         }
     }
 
-    @objc private func goToEditPost() {
-        guard let navigationController = navigationController else {
-            return
-        }
-        //let createPostViewController = CreatePostViewController(post: post)
-        //navigationController.pushViewController(createPostViewController, animated: true)
+    @objc private func goBack() {
+        coordinator?.goBack()
     }
 }
 

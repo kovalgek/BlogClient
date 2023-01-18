@@ -10,4 +10,5 @@ import Foundation
 struct Token: Decodable {
     var id: UUID?
     var value: String
+    var userID: UUID
 }

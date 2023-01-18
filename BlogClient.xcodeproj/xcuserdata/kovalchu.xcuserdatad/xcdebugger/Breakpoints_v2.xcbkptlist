@@ -135,49 +135,177 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3A59B17E-ABB8-4FA4-A5C8-AB5EBC996390"
+            uuid = "71AE9014-1C00-4774-B8BC-7E83F3D9EFA0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BlogClient/ViewControllers/Posts/PostViewController.swift"
+            filePath = "BlogClient/Coordinators/PostCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "goBack()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "25FAD567-1304-4073-B971-31D2DE6AE1E7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlogClient/ViewModels/CreatePostViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "createPost(title:content:userID:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A9E3D35D-78C4-40CD-8387-BC71261DBC6E"
+            uuid = "AD4623CF-AEF0-4994-997F-6818E57374C1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BlogClient/ViewControllers/Posts/PostViewController.swift"
+            filePath = "BlogClient/Networking/PostService/PostService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "setupBindings()"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "createPost(title:content:userID:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1FA0BC93-0A98-47D9-9D4B-0A359029388B"
+            uuid = "EA5BCF85-A6DF-4A5C-B125-1013B7DA7E54"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BlogClient/ViewControllers/Posts/PostViewController.swift"
+            filePath = "BlogClient/Networking/PostService/CreatePostEndpoint.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "parse(data:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "748DAF64-9C12-4EC5-86A7-CA390F72683D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlogClient/Networking/HTTPClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "sendRequest(endpoint:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "739DA8B7-6864-4FEF-AAB1-D397C713E8C9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlogClient/Networking/HTTPClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "sendRequest(endpoint:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "739DA8B7-6864-4FEF-AAB1-D397C713E8C9 - fa632295f0a6001e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BlogClient.HTTPClient.sendRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: BlogClient.Endpoint&gt;(endpoint: &#x3c4;_1_0, completion: (Swift.Result&lt;&#x3c4;_1_0.Model, BlogClient.RequestError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BlogClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kovalchu/Documents/home/iOS/Blog/BlogClient/BlogClient/Networking/HTTPClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "464">
+               </Location>
+               <Location
+                  uuid = "739DA8B7-6864-4FEF-AAB1-D397C713E8C9 - fa632295f0a6001e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BlogClient.HTTPClient.sendRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: BlogClient.Endpoint&gt;(endpoint: &#x3c4;_1_0, completion: (Swift.Result&lt;&#x3c4;_1_0.Model, BlogClient.RequestError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BlogClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kovalchu/Documents/home/iOS/Blog/BlogClient/BlogClient/Networking/HTTPClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "520">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5EF262C7-4B67-43D8-8ACE-9ADB5DFB5766"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlogClient/Networking/HTTPClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "request(endpoint:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5EF262C7-4B67-43D8-8ACE-9ADB5DFB5766 - da715912986dbb92"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BlogClient.HTTPClient.request&lt;&#x3c4;_0_0 where &#x3c4;_1_0: BlogClient.Endpoint&gt;(endpoint: &#x3c4;_1_0) -&gt; Swift.Optional&lt;Foundation.URLRequest&gt;"
+                  moduleName = "BlogClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kovalchu/Documents/home/iOS/Blog/BlogClient/BlogClient/Networking/HTTPClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1344">
+               </Location>
+               <Location
+                  uuid = "5EF262C7-4B67-43D8-8ACE-9ADB5DFB5766 - da715912986dbb92"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BlogClient.HTTPClient.request&lt;&#x3c4;_0_0 where &#x3c4;_1_0: BlogClient.Endpoint&gt;(endpoint: &#x3c4;_1_0) -&gt; Swift.Optional&lt;Foundation.URLRequest&gt;"
+                  moduleName = "BlogClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kovalchu/Documents/home/iOS/Blog/BlogClient/BlogClient/Networking/HTTPClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1416">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

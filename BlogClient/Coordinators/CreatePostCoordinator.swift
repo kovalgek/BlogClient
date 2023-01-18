@@ -1,17 +1,16 @@
 //
-//  LoginCoordinator.swift
+//  CreatePostCoordinator.swift
 //  BlogClient
 //
-//  Created by Anton Kovalchuk on 14/01/2023.
+//  Created by Anton Kovalchuk on 18/01/2023.
 //
 
 import UIKit
 
-class LoginCoordinator: Coordinator {
-    
-    var parentCoordinator: ChildRemoving?
+class CreatePostCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
+    var parentCoordinator: ChildRemoving?
     
     init(navigationController: UINavigationController, parentCoordinator: ChildRemoving) {
         self.navigationController = navigationController
@@ -19,13 +18,13 @@ class LoginCoordinator: Coordinator {
     }
     
     func start() {
-        let loginViewController = ViewControllerFactory.loginViewController
-        loginViewController.coordinator = self
-        navigationController.present(loginViewController, animated: true)
+        let createPostViewController = ViewControllerFactory.createPostViewController()
+        createPostViewController.coordinator = self
+        navigationController.present(createPostViewController, animated: true)
     }
 }
 
-extension LoginCoordinator: Dismissable {
+extension CreatePostCoordinator: Dismissable {
     func dimiss(viewController: UIViewController) {
         viewController.dismiss(animated: true) {
             self.parentCoordinator?.remove(coordinator: self)

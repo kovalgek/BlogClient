@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     }
     
     private let viewModel: LoginViewModelProtocol
-    weak var coordinator: LoginCoordinator?
+    weak var coordinator: Dismissable?
     
     private lazy var loginTextField: UITextField = {
         let textField = UITextField()
@@ -59,7 +59,7 @@ class LoginViewController: UIViewController {
         loginService.login(username: "admin", password: "password") { error in
             DispatchQueue.main.async {
                 guard let error = error else {
-                    self.coordinator?.backToPosts()
+                    self.coordinator?.dimiss(viewController: self)
                     return
                 }
                 print("error:\(error)")

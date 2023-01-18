@@ -9,11 +9,10 @@ import UIKit
 
 class CreatePostViewController: UIViewController {
 
-    private let postID: UUID
-    private let viewModel: PostViewModel
+    private let viewModel: CreatePostViewModel
+    weak var coordinator: Dismissable?
     
-    init(postID: UUID, viewModel: PostViewModel) {
-        self.postID = postID
+    init(viewModel: CreatePostViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -35,13 +34,13 @@ class CreatePostViewController: UIViewController {
         contentTextField.backgroundColor = .lightGray
         return contentTextField
     }()
-
-    private lazy var userLabel: UIButton = {
-        let userLabel = UIButton()
-        
-        userLabel.setTitleColor(.black, for: .normal)
-        userLabel.addTarget(self, action: #selector(goToSelectUser), for: .touchUpInside)
-        return userLabel
+    
+    private lazy var saveButton: UIButton = {
+        let saveButton = UIButton()
+        saveButton.setTitle("save", for: .normal)
+        saveButton.setTitleColor(.black, for: .normal)
+        saveButton.addTarget(self, action: #selector(createPost), for: .touchUpInside)
+        return saveButton
     }()
 
     private func applyConstraints(titleTextField: UITextField) {
@@ -59,32 +58,13 @@ class CreatePostViewController: UIViewController {
         contentTextField.heightAnchor.constraint(equalToConstant: 60).isActive = true
         contentTextField.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
-
-    private func applyConstraints(userLabel: UIButton) {
-        userLabel.translatesAutoresizingMaskIntoConstraints = false
-        userLabel.topAnchor.constraint(equalTo: contentTextField.bottomAnchor, constant: 30).isActive = true
-        userLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        userLabel.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        userLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-    }
-
-    enum PostControllerMode {
-        case create
-        case edit
-    }
-
-    private let post: Post?
-    private var selectedUser: User?
-
-    //private let mode: PostControllerMode
-
-    init(post: Post? = nil) {
-        self.post = post
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) is not supported")
+    
+    private func applyConstraints(saveButton: UIButton) {
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        saveButton.topAnchor.constraint(equalTo: contentTextField.bottomAnchor, constant: 30).isActive = true
+        saveButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        saveButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        saveButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
 
     override func viewDidLoad() {
@@ -92,33 +72,28 @@ class CreatePostViewController: UIViewController {
 
         title = "Create Post"
         view.backgroundColor = .white
+        // navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(createPost))
 
         view.addSubview(titleTextField)
         applyConstraints(titleTextField: titleTextField)
 
         view.addSubview(contentTextField)
         applyConstraints(contentTextField: contentTextField)
-
-        view.addSubview(userLabel)
-        applyConstraints(userLabel: userLabel)
-
-        //acronymShortTextField.becomeFirstResponder()
-        if let post = post {
-            titleTextField.text = post.title
-            contentTextField.text = post.content
-            userLabel.setTitle(selectedUser?.name, for: .normal)
-            navigationItem.title = "Edit Post"
-        } else {
-            populateUsers()
-        }
+        
+        view.addSubview(saveButton)
+        applyConstraints(saveButton: saveButton)
     }
 
-    @objc func goToSelectUser() {
-        guard let navigationController = navigationController, let user = selectedUser else {
-            return
-        }
+    @objc private func createPost() {
+//        guard let navigationController = navigationController, let user = selectedUser else {
+//            return
+//        }
 //        let selectUserViewController = SelectUserViewController(selectedUser: user)
 //        navigationController.pushViewController(selectUserViewController, animated: true)
+        
+        viewModel.createPost(title: titleTextField.text ?? "",
+                             content: contentTextField.text ?? "",
+                             userID: Auth.userID!)
     }
 
     func populateUsers() {
