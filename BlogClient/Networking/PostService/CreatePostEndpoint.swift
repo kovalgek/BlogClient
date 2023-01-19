@@ -10,29 +10,27 @@ import Foundation
 struct CreatePostEndpoint: Endpoint {
     typealias Model = Post
 
-    init(title: String, content: String, userID: UUID) {
+    init(title: String, content: String) {
         self.title = title
         self.content = content
-        self.userID = userID
     }
     
     private let title: String
     private let content: String
-    private let userID: UUID
     
     var path: String { "/api/posts/" }
     var method: RequestMethod { .post }
     var header: [String: String]? {
         if let token = Auth.token {
-            return ["Authorization" : "Bearer \(token)"]
+            return ["Content-Type" : "application/json",
+                    "Authorization" : "Bearer \(token)"]
         }
         return nil
     }
     
     var body: [String: String]? {
         ["title"   : title,
-         "content" : content,
-         "userID"  : userID.uuidString]
+         "content" : content]
     }
     
     func parse(data: Data) -> Result<Model, RequestError> {

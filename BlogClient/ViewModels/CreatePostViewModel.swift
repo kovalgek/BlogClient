@@ -7,8 +7,12 @@
 
 import Foundation
 
+enum CreatePostViewModelError: Error {
+    case somethingWrong
+}
+
 protocol CreatePostViewModelProtocol {
-    func createPost(title: String, content: String, userID: UUID)
+    func createPost(title: String, content: String, completion: @escaping (CreatePostViewModelError?) -> Void)
 }
 
 class CreatePostViewModel: CreatePostViewModelProtocol {
@@ -19,14 +23,20 @@ class CreatePostViewModel: CreatePostViewModelProtocol {
     
     private let service: PostServicing
     
-    func createPost(title: String, content: String, userID: UUID) {
-        service.createPost(title: title, content: content, userID: userID) { result in
+    func createPost(title: String, content: String, completion: @escaping (CreatePostViewModelError?) -> Void) {
+        service.createPost(title: title, content: content) { result in
             switch result {
-            case .success(let post):
-                break
+            case .success:
+                completion(nil)
             case .failure(let error):
-                print(error)
+                completion(error.viewModelError)
             }
         }
+    }
+}
+
+extension PostError {
+    var viewModelError: CreatePostViewModelError {
+        .somethingWrong
     }
 }

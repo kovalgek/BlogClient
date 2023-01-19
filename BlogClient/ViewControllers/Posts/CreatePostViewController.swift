@@ -72,7 +72,6 @@ class CreatePostViewController: UIViewController {
 
         title = "Create Post"
         view.backgroundColor = .white
-        // navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(createPost))
 
         view.addSubview(titleTextField)
         applyConstraints(titleTextField: titleTextField)
@@ -85,34 +84,15 @@ class CreatePostViewController: UIViewController {
     }
 
     @objc private func createPost() {
-//        guard let navigationController = navigationController, let user = selectedUser else {
-//            return
-//        }
-//        let selectUserViewController = SelectUserViewController(selectedUser: user)
-//        navigationController.pushViewController(selectUserViewController, animated: true)
         
-        viewModel.createPost(title: titleTextField.text ?? "",
-                             content: contentTextField.text ?? "",
-                             userID: Auth.userID!)
+        guard let title = titleTextField.text, let content = contentTextField.text else {
+            return
+        }
+        
+        viewModel.createPost(title: title, content: content) { error in
+            DispatchQueue.main.async {
+                self.coordinator?.dimiss(viewController: self)
+            }
+        }
     }
-
-    func populateUsers() {
-//        let usersRequest = ResourceRequest<User>(resourcePath: "users")
-//
-//        usersRequest.getAll { [weak self] result in
-//            switch result {
-//            case .failure:
-//                let message = "There was an error getting the users"
-//                ErrorPresenter.showError(message: message, on: self) { _ in
-//                    self?.navigationController?.popViewController(animated: true)
-//                }
-//            case .success(let users):
-//                DispatchQueue.main.async { [weak self] in
-//                    self?.userLabel.setTitle(users[0].name, for: .normal)
-//                }
-//                self?.selectedUser = users[0]
-//            }
-//        }
-    }
-
 }
